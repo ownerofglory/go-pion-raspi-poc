@@ -12,3 +12,7 @@ I guess it can easily run on a smaller model like **Raspberry Pi Zero** or **Ras
 
 - `Gstreamer` installed on Raspberry Pi
 - (Optional) `Go` installed, otherwise cross-compile the program for raspi
+- Camera [and microphone if needed], connected to raspi
+- Signaling server or any other mean to exchange the SPD messages and ICE-candidates
+
+I used my own ["playground" signaling server](https://github.com/ownerofglory/webrtc-signaling-go) on websockets
