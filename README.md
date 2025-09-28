@@ -31,3 +31,11 @@ scp ./build/pi-client-arm64 <user>@<raspberry_host>:~
 ```
 
 ### Run on Raspi
+
+## Example running with my  ["playground" signaling server](https://github.com/ownerofglory/webrtc-signaling-go)
+### Copy your user ID
+![](./assets/run.png)
+
+
+### Use the user id to call your Raspberry PI from the other host
+![](./assets/call.png)
