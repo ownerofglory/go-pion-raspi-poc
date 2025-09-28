@@ -16,3 +16,18 @@ I guess it can easily run on a smaller model like **Raspberry Pi Zero** or **Ras
 - Signaling server or any other mean to exchange the SPD messages and ICE-candidates
 
 I used my own ["playground" signaling server](https://github.com/ownerofglory/webrtc-signaling-go) on websockets
+
+
+## Build and run
+
+### [Cross-]compile for Raspi
+```shell
+make
+```
+### Drop the program into your raspi
+
+```shell
+scp ./build/pi-client-arm64 <user>@<raspberry_host>:~
+```
+
+### Run on Raspi
