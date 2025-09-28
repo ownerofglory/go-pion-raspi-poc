@@ -4,6 +4,7 @@ It's a PoC [WebRTC](https://webrtc.org/) client for [Raspberry Pi](https://www.r
 and [GStreamer](https://gstreamer.freedesktop.org/).
 It connects to a signaling server, streams camera/microphone over WebRTC, and supports data channels for testing peer connections
 
+<img src="./assets/raspi.png" height="240px">
 
 ## Prerequisites
 
