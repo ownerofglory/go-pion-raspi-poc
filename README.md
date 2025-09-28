@@ -14,6 +14,12 @@ I guess it can easily run on a smaller model like **Raspberry Pi Zero** or **Ras
 - (Optional) `Go` installed, otherwise cross-compile the program for raspi
 - Camera [and microphone if needed], connected to raspi
 - Signaling server or any other mean to exchange the SPD messages and ICE-candidates
+- Set the env var, e.g:
+```shell
+  export SIGNAL_WS_URL=wss://your.host/webrtc-signaling/ws
+  export SIGNAL_ORIGIN=https://your.host # (must match AllowedOrigins)
+  export RTC_CONFIG_URL=https://your.host/webrtc-signaling/api/rtc-config
+```
 
 I used my own ["playground" signaling server](https://github.com/ownerofglory/webrtc-signaling-go) on websockets
 
