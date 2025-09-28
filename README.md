@@ -44,9 +44,9 @@ scp ./build/pi-client-arm64 <user>@<raspberry_host>:~
 ### Once both peers exchanges their session information you'll see similar log output
 ![](./assets/call_success.png)
 
-#### If the issues is with the camera try running the Gstreamer pipeline on your Raspberry Pi
+#### If the issues is with the camera try running the Gstreamer pipeline on your Raspberry Pi to see whether the video is working overall
 
-Set `<your_other_host_ip>` to the IP of your machine and start transmitting video from Raspberry Pi
+Set `<your_other_host_ip>` to the IP of your machine within your local network and start transmitting video from Raspberry Pi
 ```shell
 gst-launch-1.0 libcamerasrc ! video/x-raw,width=640,height=480,framerate=30/1 !   \
 videoconvert ! x264enc tune=zerolatency bitrate=500 speed-preset=ultrafast !     \
