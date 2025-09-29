@@ -20,6 +20,12 @@ I guess it can easily run on a smaller model like **Raspberry Pi Zero** or **Ras
   export SIGNAL_WS_URL=wss://your.host/webrtc-signaling/ws
   export SIGNAL_ORIGIN=https://your.host # (must match AllowedOrigins)
   export RTC_CONFIG_URL=https://your.host/webrtc-signaling/api/rtc-config
+  
+  #  optional:
+  # export VIDEO_PORT=5004
+  # export AUDIO_PORT=5006
+  # export GST_VIDEO_PIPELINE='libcamerasrc ! video/x-raw,width=640,height=480,framerate=30/1 ! videoconvert ! x264enc tune=zerolatency bitrate=500 speed-preset=ultrafast key-int-max=60 ! h264parse config-interval=1 ! rtph264pay pt=96 config-interval=1 ! udpsink host=127.0.0.1 port=5004'
+  # export GST_AUDIO_PIPELINE='alsasrc ! audioconvert ! audioresample ! opusenc bitrate=24000 ! rtpopuspay pt=111 ! udpsink host=127.0.0.1 port=5006'
 ```
 
 I used my own ["playground" signaling server](https://github.com/ownerofglory/webrtc-signaling-go) on websockets
