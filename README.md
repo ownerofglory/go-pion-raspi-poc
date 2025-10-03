@@ -31,7 +31,14 @@ I guess it can easily run on a smaller model like **Raspberry Pi Zero** or **Ras
 I used my own ["playground" signaling server](https://github.com/ownerofglory/webrtc-signaling-go) on websockets
 
 
-## Build and run
+##  Run
+### Download the binary
+```shell
+wget https://github.com/ownerofglory/go-pion-raspi-poc/releases/download/v1.0.0/pi-client-arm64.zip
+unzip pi-client-arm64.zip
+```
+
+**OR** 
 
 ### [Cross-]compile for Raspi
 ```shell
@@ -44,6 +51,19 @@ scp ./build/pi-client-arm64 <user>@<raspberry_host>:~
 ```
 
 ### Run on Raspi
+Once the env variable set:
+```shell
+./pi-client-arm64
+```
+
+**OR**
+Set the env variables inline
+```shell
+SIGNAL_WS_URL=wss://your.host/webrtc-signaling/ws \
+SIGNAL_ORIGIN=https://your.host \
+RTC_CONFIG_URL=https://your.host/webrtc-signaling/api/rtc-config \
+./pi-client-arm64
+```
 
 ## Example running with my  ["playground" signaling server](https://github.com/ownerofglory/webrtc-signaling-go)
 ### Copy your user ID
