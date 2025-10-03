@@ -21,4 +21,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pi-client-arm64
-          path: pi-client-arm64
+          path: build/pi-client-arm64
