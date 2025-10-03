@@ -1,0 +1,24 @@
+name: Build pipeline
+
+on: [push]
+
+jobs:
+  build:
+    name: Build client
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.24'
+      - name: Build
+        run: |
+          export GOROOT=
+          make build-arm64
+      - name: Publish build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pi-client-arm64
+          path: pi-client-arm64
