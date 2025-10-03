@@ -16,6 +16,7 @@ import (
 )
 
 func main() {
+	slog.SetLogLoggerLevel(slog.LevelDebug)
 	//  env config
 	wsURL := mustGetenv("SIGNAL_WS_URL")
 	origin := mustGetenv("SIGNAL_ORIGIN")
@@ -44,12 +45,7 @@ func main() {
 	}
 
 	//  create PeerConnection handler
-	pch, err := peer.NewWebRTCPeerConnHandler(wsClient, cfg)
-	if err != nil {
-		slog.Error("Failed to create rtc connection handler", "err", err)
-		return
-	}
-	defer pch.Shutdown()
+	pch := peer.NewWebRTCPeerConnHandler(wsClient, cfg)
 
 	ctx, cancel := context.WithCancel(context.Background())
 	pch.HandleConnection(ctx)
